@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Priyanshika – Java Backend Developer</title>
+<meta name="description" content="Portfolio of Priyanshika, Java and Spring Boot developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F6F4; --surface:#FFFFFF; --surface2:#ECECE8; --ink:#121214; --muted:#5E5E69; --line:#DCDCD6; --accent:#FFC93C; --dot:#121214; --glow:rgba(18,18,20,.10);
+  --head:"Sora",system-ui,sans-serif; --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0A0A0C; --surface:#141418; --surface2:#1C1C22; --ink:#F3F3F5; --muted:#A0A0AC; --line:#2A2A32; --dot:#F3F3F5; --glow:rgba(0,0,0,.6); color-scheme:dark;}
+}
+:root[data-theme="dark"]{--bg:#0A0A0C; --surface:#141418; --surface2:#1C1C22; --ink:#F3F3F5; --muted:#A0A0AC; --line:#2A2A32; --dot:#F3F3F5; --glow:rgba(0,0,0,.6); color-scheme:dark;}
+html{scroll-padding-top:96px;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+.w{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;padding:calc(env(safe-area-inset-top,0px) + 14px) 16px 0;display:flex;justify-content:center;pointer-events:none}
+.bar{pointer-events:auto;display:flex;align-items:center;gap:6px;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;padding:6px;box-shadow:0 10px 30px -12px var(--glow);max-width:100%;overflow-x:auto}
+.bar a{text-decoration:none;font-size:.9rem;font-weight:600;padding:7px 16px;border-radius:999px;color:var(--muted);white-space:nowrap}
+.bar a:hover{color:var(--ink)}
+.bar a.on{background:var(--ink);color:var(--bg)}
+.hero{padding:72px 0 80px}
+.hero .w{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hi{color:var(--muted);font-weight:600;margin:0 0 6px}
+h1{font:700 clamp(2.6rem,6.5vw,4.6rem)/1.02 var(--head);margin:0 0 20px;letter-spacing:-.03em}
+.lead{font-size:1.15rem;color:var(--muted);max-width:44ch;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 24px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#16130A}
+.social{display:flex;gap:18px;margin-top:26px;font-weight:600;font-size:.93rem}
+.social a{color:var(--muted)}.social a:hover{color:var(--ink)}
+.stage{perspective:1000px;display:grid;place-items:center;height:340px}
+.cube{--s:180px;width:var(--s);height:var(--s);position:relative;transform-style:preserve-3d;animation:spin 18s linear infinite;transform:rotateX(-20deg)}
+.cube:hover{animation-play-state:paused}
+.face{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font:600 1.25rem/1.2 var(--head);background:color-mix(in srgb,var(--surface) 90%,transparent);border:1px solid var(--line);border-radius:18px;box-shadow:inset 0 0 0 6px var(--surface2),inset 0 -4px 0 var(--accent)}
+.f1{transform:translateZ(calc(var(--s)/2))}
+.f2{transform:rotateY(90deg) translateZ(calc(var(--s)/2))}
+.f3{transform:rotateY(180deg) translateZ(calc(var(--s)/2))}
+.f4{transform:rotateY(-90deg) translateZ(calc(var(--s)/2))}
+@keyframes spin{to{transform:rotateX(-20deg) rotateY(360deg)}}
+section{padding:72px 0}
+.kicker{color:var(--muted);font-weight:600;font-size:.92rem;margin:0 0 4px}
+h2{font:700 clamp(1.8rem,3.6vw,2.4rem)/1.15 var(--head);letter-spacing:-.02em;margin:0 0 10px}
+.intro{color:var(--muted);margin:0 0 36px;max-width:56ch}
+h3{font:600 1.2rem/1.35 var(--head);margin:0}
+p{margin:0 0 14px;max-width:66ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 18px 40px -26px var(--glow)}
+.tilt{transition:transform .18s ease-out;transform-style:preserve-3d;will-change:transform}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.stat{text-align:center;padding:22px 10px}
+.stat b{display:block;font:700 2.2rem/1.1 var(--head)}
+.stat span{color:var(--muted);font-size:.92rem}
+.row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.when{color:var(--muted);font-size:.9rem;font-weight:600}
+.sub{color:var(--muted);margin:2px 0 0}
+.tog{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%}
+.tog i{font-style:normal;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:1.2rem;transition:transform .2s,background .2s}
+.tog[aria-expanded="true"] i{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:#16130A}
+.more{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.more[hidden]{display:none}
+ul.pts{margin:0 0 4px;padding-left:20px}
+ul.pts li{margin-bottom:8px}
+ul.pts li::marker{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.tags li{display:flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:.88rem;font-weight:600}
+.tags li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c,var(--dot))}
+.proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.pv{height:190px;background:linear-gradient(135deg,var(--surface2),var(--surface));display:grid;place-items:center;perspective:700px;border-bottom:1px solid var(--line);overflow:hidden}
+.iso{position:relative;width:120px;height:120px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-38deg);transition:transform .5s}
+.proj:hover .iso{transform:rotateX(58deg) rotateZ(-8deg)}
+.iso span{position:absolute;inset:0;border-radius:14px;border:1px solid var(--line);background:var(--surface);box-shadow:0 12px 24px -8px var(--glow)}
+.iso span:nth-child(1){transform:translateZ(0)}
+.iso span:nth-child(2){transform:translateZ(26px);background:var(--surface2)}
+.iso span:nth-child(3){transform:translateZ(52px);background:var(--ink)}
+.iso span:nth-child(4){transform:translateZ(78px);background:var(--accent);inset:30px;border-radius:10px}
+.pb{padding:24px}
+.eyebrow{color:var(--muted);font-size:.85rem;font-weight:600;margin:0 0 4px}
+.skillgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.skillgrid h3{font-size:1.05rem}
+.ach{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ach p{margin:0;color:var(--muted)}
+.cta{text-align:center;padding:56px 24px}
+.cta h2{margin-bottom:12px}
+.cta p{margin:0 auto 26px;color:var(--muted)}
+.cta .btns{justify-content:center}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:.9rem}
+@media (max-width:860px){
+  .hero{padding-top:48px}
+  .hero .w{grid-template-columns:1fr;gap:12px}
+  .stage{height:250px}.cube{--s:140px}
+  .grid2,.ach,.skillgrid{grid-template-columns:1fr}
+}
+@media (max-width:520px){.stats{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.cube{animation:none;transform:rotateX(-20deg) rotateY(-30deg)}html{scroll-behavior:auto}.tilt,.iso,.btn{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="bar" role="navigation" aria-label="Sections">
+<a href="#top">Home</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a></div></header>
+
+<main id="top">
+<div class="hero"><div class="w">
+  <div>
+    <p class="hi">Hi, I am</p>
+    <h1>Priyanshika</h1>
+    <p class="lead">Java backend developer who builds secure, database-driven apps with Spring Boot, REST APIs and SQL.</p>
+    <div class="btns"><a class="btn pri" href="#projects">View projects</a><a class="btn" href="mailto:pandeypriyanshika@gmail.com">Contact me</a></div>
+    <div class="social"><a href="mailto:pandeypriyanshika@gmail.com">Email</a><a href="https://github.com/Priyanshika25" rel="noopener">GitHub</a></div>
+  </div>
+  <div class="stage" aria-hidden="true"><div class="cube">
+    <div class="face f1">Java</div><div class="face f2">Spring Boot</div><div class="face f3">MySQL</div><div class="face f4">React</div>
+  </div></div>
+</div></div>
+
+<section id="experience"><div class="w">
+  <p class="kicker">Professional journey</p>
+  <h2>Experience</h2>
+  <p class="intro">Backend work on a real Java and Spring Boot codebase.</p>
+  <div class="card tilt">
+    <button class="tog" aria-expanded="true" aria-controls="exp1">
+      <span><span class="when">July 2025 – Oct 2025</span><h3>Java Developer Intern</h3><span class="sub">Zidio Development</span></span><i aria-hidden="true">+</i>
+    </button>
+    <div class="more" id="exp1">
+      <ul class="pts">
+        <li>Built Java backend features using OOP, collections, exception handling, multithreading and advanced Java concepts.</li>
+        <li>Developed Spring Boot REST APIs with layered architecture and database integration.</li>
+        <li>Used MySQL, JPA/Hibernate and JDBC for data persistence and queries.</li>
+        <li>Tested APIs, debugged issues and managed code with Git.</li>
+      </ul>
+      <ul class="tags"><li>Java</li><li>Spring Boot</li><li>MySQL</li><li>Hibernate</li><li>Git</li></ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="w">
+  <p class="kicker">Selected work</p>
+  <h2>Projects</h2>
+  <p class="intro">Two projects that show how I design APIs, data and access control.</p>
+  <div class="grid2">
+    <article class="card proj tilt">
+      <div class="pv" aria-hidden="true"><div class="iso"><span></span><span></span><span></span><span></span></div></div>
+      <div class="pb">
+        <p class="eyebrow">Full-stack project</p><h3>Keystone</h3>
+        <p class="sub" style="margin-bottom:12px">Field service platform</p>
+        <ul class="pts">
+          <li>Handles service requests, technician assignment, work orders and tracking.</li>
+          <li>RESTful APIs with a Controller-Service-Repository structure.</li>
+          <li>JWT authentication and role-based authorization for multiple user roles.</li>
+          <li>Dispatch, inventory, time tracking and customer feedback modules.</li>
+          <li>React and TypeScript front end connected with Axios.</li>
+        </ul>
+        <ul class="tags"><li style="--c:#6DB33F">Spring Boot</li><li style="--c:#ED8B00">Java</li><li style="--c:#4479A1">MySQL</li><li style="--c:#59666C">JWT</li><li style="--c:#61DAFB">React</li><li style="--c:#3178C6">TypeScript</li></ul>
+      </div>
+    </article>
+    <article class="card proj tilt">
+      <div class="pv" aria-hidden="true"><div class="iso"><span></span><span></span><span></span><span></span></div></div>
+      <div class="pb">
+        <p class="eyebrow">Academic project</p><h3>Fee Management System</h3>
+        <p class="sub" style="margin-bottom:12px">Student registration and payments</p>
+        <ul class="pts">
+          <li>Lets students register and pay fees, with separate secure access for students and admins.</li>
+          <li>Backend built with Servlets, JSP, JDBC and MySQL.</li>
+          <li>Relational schema for payment tokens, transactions, fee records and user data.</li>
+        </ul>
+        <ul class="tags"><li style="--c:#ED8B00">Java</li><li style="--c:#C74634">Servlets</li><li style="--c:#59666C">JSP</li><li style="--c:#4479A1">MySQL</li></ul>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section id="skills"><div class="w">
+  <p class="kicker">Tech stack</p>
+  <h2>Skills</h2>
+  <p class="intro">Tools and technologies I use to build and ship backend features.</p>
+  <div class="skillgrid">
+    <div class="card tilt"><h3>Languages and core</h3><ul class="tags"><li style="--c:#ED8B00">Java</li><li style="--c:#5C6BC0">C</li><li style="--c:#4479A1">SQL</li><li>OOP</li><li>DSA</li><li>DBMS</li><li>Operating Systems</li><li>Computer Networks</li></ul></div>
+    <div class="card tilt"><h3>Frameworks and web</h3><ul class="tags"><li style="--c:#6DB33F">Spring Boot</li><li style="--c:#6DB33F">Spring MVC</li><li>REST APIs</li><li>JSP</li><li>JDBC</li><li style="--c:#61DAFB">React.js</li><li style="--c:#3178C6">TypeScript</li><li style="--c:#E34F26">HTML</li><li style="--c:#1572B6">CSS</li><li style="--c:#F7DF1E">JavaScript</li></ul></div>
+    <div class="card tilt"><h3>Databases</h3><ul class="tags"><li style="--c:#4479A1">MySQL</li><li>JPA</li><li style="--c:#59666C">Hibernate</li></ul></div>
+    <div class="card tilt"><h3>Tools</h3><ul class="tags"><li style="--c:#F05032">Git</li><li>GitHub</li><li style="--c:#C71A36">Maven</li><li style="--c:#FF6C37">Postman</li><li style="--c:#85EA2D">Swagger/OpenAPI</li><li>IntelliJ IDEA</li><li>Eclipse</li><li style="--c:#007ACC">VS Code</li></ul></div>
+  </div>
+  <p style="margin-top:24px;color:var(--muted)">Soft skills: adaptability, team management, leadership, communication and problem solving.</p>
+</div></section>
+
+<section id="about"><div class="w">
+  <p class="kicker">Background</p>
+  <h2>About me</h2>
+  <div class="grid2" style="margin-top:26px">
+    <div>
+      <p>I’m a computer science graduate with a strong base in OOP, data structures and algorithms, and DBMS. I enjoy building secure, database-driven applications and have shipped full-stack projects with a React and TypeScript front end.</p>
+      <p>I’ve led student teams and reached the Smart India Hackathon finals, so I work well on my own and with others. Outside code, I solve Rubik’s cubes, play chess and practise yoga.</p>
+    </div>
+    <div class="card tilt"><h3>B.Tech, Computer Science and Engineering</h3><p class="sub">IES College of Technology</p><p class="when" style="margin:10px 0 0">Nov 2022 – July 2026 · CGPA 8.12</p></div>
+  </div>
+  <div class="stats">
+    <div class="card stat tilt"><b>8.12</b><span>CGPA</span></div>
+    <div class="card stat tilt"><b>500+</b><span>problems solved</span></div>
+    <div class="card stat tilt"><b>4 months</b><span>Java internship</span></div>
+  </div>
+  <div class="ach" style="margin-top:24px">
+    <div class="card tilt"><h3>Smart India Hackathon</h3><p class="sub">Finalist</p><p>Contributed to team problem solving and solution development.</p></div>
+    <div class="card tilt"><h3>NPTEL Elite</h3><p class="sub">Programming in Java</p><p>Also certified in C Programming.</p></div>
+    <div class="card tilt"><h3>Student leadership</h3><p class="sub">Activity Council President, Women Cell Vice Secretary</p><p>Led student initiatives and coordinated campus activities.</p></div>
+    <div class="card tilt"><h3>500+ problems solved</h3><p class="sub">Across coding platforms</p><p>Regular practice in data structures and algorithms.</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="w"><div class="card cta">
+  <p class="kicker">Open to Java and Spring Boot roles</p>
+  <h2>Want to build something solid?</h2>
+  <p>Send me a message about a role or project and I’ll reply soon.</p>
+  <div class="btns"><a class="btn pri" href="mailto:pandeypriyanshika@gmail.com">pandeypriyanshika@gmail.com</a><a class="btn" href="https://github.com/Priyanshika25" rel="noopener">GitHub</a></div>
+</div></div></section>
+</main>
+<footer><div class="w">© 2026 Priyanshika</div></footer>
+
+<script>
+(function(){
+  var t=document.querySelector('.tog'),m=document.getElementById('exp1');
+  if(t&&m)t.addEventListener('click',function(){var o=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!o));m.hidden=o});
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches,fine=window.matchMedia('(pointer: fine)').matches;
+  if(!rm&&fine){
+    [].forEach.call(document.querySelectorAll('.tilt'),function(el){
+      el.addEventListener('mousemove',function(e){
+        var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+        el.style.transform='perspective(900px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg)';
+      });
+      el.addEventListener('mouseleave',function(){el.style.transform=''});
+    });
+  }
+  if(!('IntersectionObserver' in window))return;
+  var links=[].slice.call(document.querySelectorAll('.bar a'));
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}});
+  },{rootMargin:'-35% 0px -55% 0px'});
+  links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s&&a.getAttribute('href')!=='#top')io.observe(s)});
+})();
+</script>
+</body>
+</html>
